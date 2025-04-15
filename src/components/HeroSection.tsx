@@ -61,14 +61,19 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-[#06b6d4] to-[#0891b2] bg-clip-text text-transparent">
-          {firstName.split('').map((letter, index) => (
-            <AnimatedLetter key={`first-${index}`} letter={letter} index={index} />
-          ))}
-          {' '}
-          {lastName.split('').map((letter, index) => (
-            <AnimatedLetter key={`last-${index}`} letter={letter} index={index + firstName.length} />
-          ))}
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-[#06b6d4] to-[#0891b2] bg-clip-text text-transparent">
+          <div className="flex flex-row flex-wrap justify-center items-center gap-x-3 gap-y-0">
+            <div className="whitespace-nowrap">
+              {firstName.split('').map((letter, index) => (
+                <AnimatedLetter key={`first-${index}`} letter={letter} index={index} />
+              ))}
+            </div>
+            <div className="whitespace-nowrap">
+              {lastName.split('').map((letter, index) => (
+                <AnimatedLetter key={`last-${index}`} letter={letter} index={index + firstName.length} />
+              ))}
+            </div>
+          </div>
         </h1>
         
         <motion.div
